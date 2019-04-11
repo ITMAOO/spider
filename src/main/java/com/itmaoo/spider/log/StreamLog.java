@@ -1,4 +1,4 @@
-package com.itmaoo.demo.log;
+package com.itmaoo.spider.log;
 
 import org.apache.commons.lang.StringUtils;
 

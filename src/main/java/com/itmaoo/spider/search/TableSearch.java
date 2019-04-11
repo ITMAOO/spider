@@ -1,4 +1,4 @@
-package com.itmaoo.demo.search;
+package com.itmaoo.spider.search;
 
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 

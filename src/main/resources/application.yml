@@ -1,55 +1,27 @@
 server:
-  port: 15015
+  port: 19001
 
 security:
   basic:
-    enabled: false
-  oauth2:
-    client:
-      client-id: quote-service
-      access-token-uri: http://auth.springfans.org/uaa/oauth/token
-      client-secret: 3M3D#oS-OGbodYJ1oxoLGOtwiRe
-      grant-type: client_credentials
-    resource:
-      user-info-uri: http://auth.springfans.org/uaa/userinfo
-      token-info-uri: http://auth.springfans.org/uaa/oauth/check_token
-      prefer-token-info: true
+    enabled: true
 spring:
   datasource:
     username: root
-    password: root
-    url: jdbc:mysql://mysql.springfans.org:3306/springfans?useSSL=false&characterEncoding=utf-8&serverTimezone=UTC&useTimezone=true
-    driver-class-name: com.mysql.jdbc.Driver
+    password: itstudio
+    url: jdbc:mysql://120.25.193.26:3306/itmaoo_spider?useSSL=false&characterEncoding=utf-8&serverTimezone=UTC&useTimezone=true
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       maximum-pool-size: 20
-  rabbitmq:
-    addresses: amqp://guest:guest@rabbitmq.springfans.org:5672/
-  redis:
-    url: redis://redis.springfans.org:6379
   http:
     multipart:
       max-file-size: 5MB
       max-request-size: 5MB
-  cloud:
-    inetutils:
-      ignoredInterfaces:
-      - docker0
-      - veth.*
-      preferredNetworks:
-      - "192.168.102"
-
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 10
-    prefer-ip-address: true
-  client:
-    registry-fetch-interval-seconds: 5
-    service-url:
-      defaultZone: http://registry.springfans.org/eureka
-    register-with-eureka: true
-    fetch-registry: true
-
+  main:
+    allow-bean-definition-overriding: true
+mybatis:
+  type-aliases-package: com.itmaoo.spider
+  configuration:
+    map-underscore-to-camel-case: true
 management:
   endpoints:
     enabled-by-default: true
@@ -60,10 +32,7 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-
-quote:
-  cron:
-    digitalCurrencyPoll: 0 */30 *  * * ?
-    legalCurrencyPoll: 0 0 0/1  * * ?
-  coinmarketcap:
-    CMC_PRO_API_KEY: "d293d4ab-9744-4c66-81a6-cf9e6761dbf5"
+eureka: 
+  client:
+    register-with-eureka: false
+    fetch-registry: false

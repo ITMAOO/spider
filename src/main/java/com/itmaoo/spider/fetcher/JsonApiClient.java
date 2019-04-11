@@ -1,4 +1,4 @@
-package com.itmaoo.demo.fetcher;
+package com.itmaoo.spider.fetcher;
 
 
 import java.io.IOException;
@@ -31,7 +31,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.joda.time.DateTime;
 
-import com.itmaoo.demo.log.StreamLog;
+import com.itmaoo.spider.log.StreamLog;
 
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
@@ -67,6 +67,10 @@ public class JsonApiClient {
         return send(url + uri.toString(), null, false, sourceId);
 
     }
+    public static String get(String url, String sourceId) {
+        return send(url, null, false, sourceId);
+
+    }
 
     private static String send(String url, Map<String, String> map, Boolean isPost, String sourceId) {
         //sourceId, type, duration, datetime, status, response, errorMsg
@@ -83,7 +87,7 @@ public class JsonApiClient {
             //采用绕过验证的方式处理https请求
             SSLContext sslcontext = createIgnoreVerifySSL();
 
-            // 设置协议http和https对应的处理socket链接工厂的对�?
+            // 设置协议http和https对应的处理socket链接工厂的对�?
             Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder.<ConnectionSocketFactory>create()
                     .register("http", PlainConnectionSocketFactory.INSTANCE)
                     .register("https", new SSLConnectionSocketFactory(sslcontext))
@@ -113,7 +117,7 @@ public class JsonApiClient {
 
 
                 //设置header信息
-                //指定报文头�?�Content-type】�?��?�User-Agent�?
+                //指定报文头�?�Content-type】�?��?�User-Agent�?
                 httpPost.setHeader("Content-type", "application/x-www-form-urlencoded");
                 httpPost.setHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
 
@@ -134,7 +138,7 @@ public class JsonApiClient {
                 }
 
                 //设置header信息
-                //指定报文头�?�Content-type】�?��?�User-Agent�?
+                //指定报文头�?�Content-type】�?��?�User-Agent�?
                 httpGet.setHeader("Content-type", "application/x-www-form-urlencoded");
                 httpGet.setHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
 
@@ -182,7 +186,7 @@ public class JsonApiClient {
     public static SSLContext createIgnoreVerifySSL() throws NoSuchAlgorithmException, KeyManagementException {
         SSLContext sc = SSLContext.getInstance("SSLv3");
 
-        // 实现�?个X509TrustManager接口，用于绕过验证，不用修改里面的方�?
+        // 实现�?个X509TrustManager接口，用于绕过验证，不用修改里面的方�?
         X509TrustManager trustManager = new X509TrustManager() {
             @Override
             public void checkClientTrusted(

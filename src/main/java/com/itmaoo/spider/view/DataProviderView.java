@@ -1,6 +1,6 @@
-package com.itmaoo.demo.view;
+package com.itmaoo.spider.view;
 
-import com.itmaoo.demo.enums.HttpRequestType;
+import com.itmaoo.spider.enums.HttpRequestType;
 
 import lombok.Data;
 
@@ -10,5 +10,8 @@ public class DataProviderView {
 	private HttpRequestType requestType;
 	private String params;
 	private Boolean checked;
+	private String code;
+	private String name;
+	private String fetchRegexMidle;
 	
 }

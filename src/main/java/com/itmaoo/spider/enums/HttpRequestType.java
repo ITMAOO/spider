@@ -1,4 +1,4 @@
-package com.itmaoo.demo.enums;
+package com.itmaoo.spider.enums;
 
 public enum HttpRequestType {
 	POST,GET;

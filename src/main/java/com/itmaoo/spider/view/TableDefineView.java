@@ -1,8 +1,8 @@
-package com.itmaoo.demo.view;
+package com.itmaoo.spider.view;
 
 import java.util.List;
 
-import com.itmaoo.demo.view.table.TableColumnView;
+import com.itmaoo.spider.view.table.TableColumnView;
 
 import lombok.Data;
 

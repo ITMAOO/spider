@@ -1,10 +1,10 @@
-package com.itmaoo.demo.controller;
+package com.itmaoo.spider.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.itmaoo.demo.search.TableSearch;
+import com.itmaoo.spider.search.TableSearch;
 
 @Controller
 @RequestMapping("/search")

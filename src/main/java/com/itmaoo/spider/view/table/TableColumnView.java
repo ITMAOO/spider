@@ -1,4 +1,4 @@
-package com.itmaoo.demo.view.table;
+package com.itmaoo.spider.view.table;
 
 import lombok.Data;
 
