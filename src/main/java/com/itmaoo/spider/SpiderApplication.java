@@ -9,7 +9,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.itmaoo.spider.dao.mapper")
 @ComponentScan(basePackages = {"com.itmaoo.spider"})
 @EnableResourceServer
 public class SpiderApplication extends ResourceServerConfigurerAdapter{
@@ -23,7 +22,7 @@ public class SpiderApplication extends ResourceServerConfigurerAdapter{
 
         http.authorizeRequests()
                 .antMatchers(
-                        "/define/**"
+                        "/search/stock/**"
                 ).permitAll()
                 .anyRequest().authenticated();
     }
