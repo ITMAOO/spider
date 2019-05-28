@@ -1,4 +1,4 @@
-package com.test;
+package com.itmaoo.stock;
 
 public class TestUnicode {
 	public static void main(String[] args) {

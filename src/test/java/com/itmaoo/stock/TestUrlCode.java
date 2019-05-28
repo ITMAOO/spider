@@ -1,6 +1,5 @@
-package com.test;
+package com.itmaoo.stock;
 
-import java.net.URL;
 import java.net.URLDecoder;
 
 public class TestUrlCode {
