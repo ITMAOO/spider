@@ -13,5 +13,6 @@ public class DataProviderView {
 	private String code;
 	private String name;
 	private String fetchRegexMidle;
+	private Integer index;
 	
 }

@@ -16,4 +16,5 @@ public class DataProviderPo {
 	private String updateTime;
 	private String createTime;
 	private String fetchRegexMidle;
+	private Integer index;
 }
