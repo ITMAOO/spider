@@ -22,8 +22,8 @@ public class SpiderApplication extends ResourceServerConfigurerAdapter{
 
         http.authorizeRequests()
                 .antMatchers(
-                        "/search/stock/**"
-                ).permitAll()
+                        "/search/stock/**",  "/search/stocks"
+                        ).permitAll()
                 .anyRequest().authenticated();
     }
 }

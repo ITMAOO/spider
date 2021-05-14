@@ -1,5 +1,5 @@
 server:
-  port: 19001
+  port: 19002
 
 security:
   basic:
@@ -8,7 +8,7 @@ spring:
   datasource:
     username: root
     password: itstudio
-    url: jdbc:mysql://120.25.193.26:3306/itmaoo_spider?useSSL=false&characterEncoding=utf-8&serverTimezone=UTC&useTimezone=true
+    url: jdbc:mysql://localhost:3306/service_shop?useSSL=false&characterEncoding=utf-8&serverTimezone=UTC&useTimezone=true
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       maximum-pool-size: 20

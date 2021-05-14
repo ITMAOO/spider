@@ -34,7 +34,7 @@ public final class JedisUtil {
     /**
      * 初始化Redis连接池
      */
-    static {
+     {
         try {
             //FileInputStream in = new FileInputStream(new File(System.getenv("DDY_RESOURCES_DIR")+"/jedis.properties"));
         	//Properties prop = new Properties();
